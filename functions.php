@@ -30,25 +30,24 @@ add_action('wp_enqueue_scripts','sohan_css_and_js_file_calling');
 // Theme function
 
 function sohan_customizar_register($wp_customize){
-    $wp_customize-> add_section('sohan_header_area', array(
-        'title'=> __('header Area','sohan'),
-        'description'=> ' If you want to update your header area, you can do it.  '
-
+    $wp_customize->add_section('sohan_header_area', array(
+      'title' =>__('Header Area', 'sohan'),
+      'description' => 'If you interested to update your header area, you can do it here.'
     ));
-    $wp_customize->ann_setting('sohan_logo', array( 
-        'default' => get_bloginfo('template_directory').'/img/logo/jpg' ,
-    ) );
-
-    $wp_customize-> add_control( new WP_Customize_Image_Control($wp_customize,'sohan_logo', array(
-        'label'=> 'logo upload',
-'description' => 'If you interester to change or update your logo you can do it.',
-        'setting'=> 'sohan_logo',
-        'section'=> 'sohan_header_area',
-    )));
-}
-
-
-
-add_action( 'customizar_register','sohan_customizar_register');
+  
+    $wp_customize->add_setting('sohan_logo', array(
+      'default' => get_bloginfo('template_directory') . '/img/logo.jpg',
+    ));
+  
+    $wp_customize-> add_control(new WP_Customize_Image_Control($wp_customize, 'sohan_logo', array(
+      'label' => 'Logo Upload',
+      'description' => 'If you interested to change or update your logo you can do it.',
+      'setting' => 'sohan_logo',
+      'section' => 'sohan_header_area',
+    ) ));
+  
+  }
+  
+  add_action('customize_register', 'sohan_customizar_register');
 
 
