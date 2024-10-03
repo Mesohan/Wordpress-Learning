@@ -41,6 +41,8 @@ add_action('wp_enqueue_scripts','sohan_css_and_js_file_calling');
 // Theme function
 
 function sohan_customizar_register($wp_customize){
+  //Header Area Function
+
     $wp_customize->add_section('sohan_header_area', array(
       'title' =>__('Header Area', 'sohan'),
       'description' => 'If you interested to update your header area, you can do it here.'
@@ -56,6 +58,30 @@ function sohan_customizar_register($wp_customize){
       'setting' => 'sohan_logo',
       'section' => 'sohan_header_area',
     ) ));
+
+    //Menu Position Option
+    $wp_customize ->add_section( 'sohan_menu_option',array(
+      'title'=>__('menu position option','sohan'),
+      'description' => 'If you interested to change your menu position , you can do it here.'
+
+    ));
+
+
+    $wp_customize->add_setting('sohan_menu_position',array(
+      'default' => 'right_menu',
+
+    ));
+    $wp_customize-> add_control('sohan_menu_position',array(
+      'label' => 'menu position',
+      'description'=> 'select your menu position',
+      'setting' => 'sohan_menu_position',
+      'section' => 'sohan_menu_option',
+      'type'=> 'radio',
+      'choices'=>array(
+        'left_menu'=>'Left menu',
+        'right_menu'=>'Right menu',
+        'center_menu'=>'Center menu',
+      ) ));
   
   }
   
@@ -63,6 +89,6 @@ function sohan_customizar_register($wp_customize){
 
 
 // Menu Register
-register_nav_menu( 'main_menu', __('Main Menu', 'sohan') );
+register_nav_menu( 'main_menu', __('main Menu', 'sohan') );
 
 
