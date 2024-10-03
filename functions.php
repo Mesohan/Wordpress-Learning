@@ -27,6 +27,17 @@ wp_enqueue_style('custom');
 
 add_action('wp_enqueue_scripts','sohan_css_and_js_file_calling');
 
+
+ //google fonts enqueue
+
+ function sohan_add_google_fonts(){
+  wp_enqueue_style( 'sohan_google_fonts','https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap',false );
+
+ }
+
+ add_action('wp_enqueue_scripts','sohan_add_google_fonts');
+
+
 // Theme function
 
 function sohan_customizar_register($wp_customize){
@@ -53,3 +64,5 @@ function sohan_customizar_register($wp_customize){
 
 // Menu Register
 register_nav_menu( 'main_menu', __('Main Menu', 'sohan') );
+
+

@@ -10,6 +10,8 @@
 <head>
   <meta charset="<?php bloginfo('charset') ?> ">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+ 
   <?php wp_head(); ?>
 
 </head>
@@ -22,22 +24,7 @@
           <a href=""><img src="<?php echo get_theme_mod('sohan_logo'); ?>" alt=""></a>
         </div>
         <div class="col-md-9">
-          <ul id="nav">
-            <li><a href="">Home</a></li>
-            <li><a href="">about</a></li>
-            <li><a href="">media</a></li>
-            <li><a href="">file</a></li>
-            <li><a href="">download</a></li>
-            <li><a href="">contract</a></li>
-            <li><a href="">service</a>
-              <ul>
-                <li><a href="">Dropdown Menu</a></li>
-                <li><a href="">Dropdown Menu</a></li>
-                <li><a href="">Dropdown Menu</a></li>
-                <li><a href="">Dropdown Menu</a></li>
-              </ul>
-            </li>
-          </ul>
+        <?php wp_nav_menu( array('theme_location'=>'maim_menu','menu_id'=>'nav') ); ?>
         </div>
       </div>
     </div>
