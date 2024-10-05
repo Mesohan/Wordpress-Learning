@@ -82,6 +82,29 @@ function sohan_customizar_register($wp_customize){
         'right_menu'=>'Right menu',
         'center_menu'=>'Center menu',
       ) ));
+
+
+
+      
+    //footer Option
+    $wp_customize ->add_section( 'sohan_footer_option',array(
+      'title'=>__('footer option','sohan'),
+      'description' => 'If you interested to change your footer settings , you can do it here.'
+
+    ));
+
+
+    $wp_customize->add_setting('sohan_copyright_section',array(
+      'default' => '&copy; copyright 2021 | sohan',
+
+    ));
+    $wp_customize-> add_control('sohan_copyright_section',array(
+      'label' => 'copyright text',
+      'description'=> 'Ifyou need you can update your copyright text from here ',
+      'setting' => 'sohan_copyright_section',
+      'section' => 'sohan_footer_option',
+  
+       ));
   
   }
   
@@ -92,3 +115,19 @@ function sohan_customizar_register($wp_customize){
 register_nav_menu( 'main_menu', __('main Menu', 'sohan') );
 
 
+
+
+// walker Menu properties
+
+function sohan_nav_description($item_output, $item, $args) {
+  if(!empty($item-description)){
+    $item_output = str_replace($args->link_after . '</a>', '<span class=""wakler_nav>' .
+    $item->description . '</span>' . $args->link_after .'</a>', $item_output);
+}
+return $item_output;
+
+
+}
+
+// add_filter( $hook_name:string, $callback:callable, $priority:integer, $accepted_args:integer );
+add_filter( 'walker_nav_menu_start_el','sohan_nav_description', 10, 3  );

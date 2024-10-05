@@ -3,7 +3,10 @@
 ========================================*/
 body {
   font-family: "Kaisei Decol", serif;
+  font-size: 15px;
+  line-height: 1.5em;
 }
+
 h1,
 h2,
 h3,
@@ -13,6 +16,7 @@ h6 {
   font-family: "Oswald", sans-serif;
   line-height: 1.5em;
 }
+
 img {
   max-width: 100%;
 }
@@ -31,17 +35,27 @@ img {
   list-style: none;
   text-align: right;
 }
+
 #header_area .col-md-9 ul li {
   display: inline-block;
   position: relative;
 }
+
+#header_area .col-md-9 ul li a span {
+  font-family: "Kaisei Decol", serif;
+  display: block;
+  font-size: 13px;
+}
+
 #header_area .col-md-9 ul li a {
   color: #262626;
   padding: 20px 10px;
+  font-size: 16px;
   display: block;
   text-transform: uppercase;
   text-decoration: none;
 }
+
 #header_area .col-md-9 ul li a:hover {
   background: #ea1a70;
   color: #fff;
@@ -56,25 +70,32 @@ img {
   text-align: left;
   top: 62px;
   width: 200px;
+  z-index: 99999;
 }
+
 #header_area .col-md-9 ul li:hover ul {
   left: 0px;
 }
+
 #header_area .col-md-9 ul li ul li {
   display: block;
 }
+
 #header_area .col-md-9 ul li ul li a {
   color: #fff;
   padding: 8px 10px;
 }
+
 #header_area .col-md-9 ul li ul li a:hover {
   background: #ddd;
   color: #262626;
 }
+
 #header_area .col-md-9 ul li:hover a {
   background: #ea1a70;
   color: #fff;
 }
+
 #header_area .col-md-9 ul li:hover ul li a {
   background: none;
   color: #fff;
@@ -86,34 +107,41 @@ img {
   top: 0;
   position: absolute;
 }
+
 #header_area .col-md-9 ul li:hover ul li ul {
   left: -999999px;
 }
+
 #header_area .col-md-9 ul li ul li:hover ul {
   left: 200px;
 }
+
 #header_area .col-md-9 ul li ul li:hover a {
   background: #ea1a70;
   color: #fff;
 }
+
 #header_area .col-md-9 ul ul li:hover ul li a {
   background: #262626;
   color: #fff;
 }
+
 #header_area .col-md-9 ul ul li ul li a:hover {
   background: #ea1a70;
   color: #fff;
 }
-/* =================
-Menu position
-===================== */
 
+/*===========================================
+  Menu Position
+===========================================*/
 #header_area.left_menu .col-md-3 {
   order: 2;
 }
+
 #header_area.left_menu .col-md-9 {
   order: 1;
 }
+
 #header_area.left_menu .col-md-9 ul {
   text-align: left;
 }
@@ -123,9 +151,64 @@ Menu position
   text-align: center;
   margin-bottom: 10px;
 }
+
 #header_area.center_menu .col-md-9 {
   width: 100%;
 }
+
 #header_area.center_menu .col-md-9 ul {
   text-align: center;
+}
+
+#header_area.center_menu .col-md-9 ul ul {
+  text-align: left;
+}
+
+
+
+
+/*=======================================
+ copyright area style
+========================================*/
+/* #copyright_area {
+  background-color: #13121326;
+  text-align: center;
+
+  padding: 10px 0;
+  color: #fff;
+}
+
+#copyright_area p {
+
+  margin: 0;
+  color: #111010;
+  font-size: 15px;
+
+}
+
+
+#copyright_area p a {
+  color: #f73d3d;
+}
+
+#copyright_area p a:hover {
+  text-decoration: underline;
+} */
+
+#copyright_area {
+  background: #292929;
+  padding: 20px 0;
+  color: #fff;
+  text-align: center;
+}
+#copyright_area p {
+  margin: 0;
+  color: #fff;
+  font-size: 15px;
+}
+#copyright_area p a {
+  color: #ea1a70;
+}
+#copyright_area p a:hover {
+  text-decoration: underline;
 }
